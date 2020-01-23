@@ -3,18 +3,15 @@ import styled from "styled-components"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-
-import Particles from "react-particles-js"
-import config from "../../particlesjs-config"
+import Social from "../components/social"
 
 const Header = styled.div`
-  background: #1e1e1e;
   height: 100vh;
 `
 
 const Title = styled.span`
   position: absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translateX(-50%);
   color: #0abdc6;
@@ -27,13 +24,28 @@ const Title = styled.span`
   }
 `
 
-const SubText = styled.span`
+const Socials = styled.div`
   position: absolute;
-  top: 55%;
+  width: 300px;
+  top: 52%;
+  left: 42%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width: 870px) {
+    left: 25%;
+    width: 200px;
+  }
+`
+
+const Email = styled.span`
+  position: absolute;
+  top: 57%;
   left: 50%;
   transform: translateX(-50%);
   color: #ccc;
-  font-family: Orbitron;
   font-size: 1em;
   letter-spacing: 0.2em;
 
@@ -42,17 +54,21 @@ const SubText = styled.span`
   }
 `
 
-const StyledParticles = styled(Particles)`
-  height: 100%;
-`
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Header>
       <Title>tylerDOTdev</Title>
-      <SubText>Under Construction...</SubText>
-      <StyledParticles params={config} />
+      <Socials>
+        <Social link="https://www.twitter.com/tylerdotdev/" icon="twitter" />
+        <Social
+          link="https://www.instagram.com/tylerdotdev/"
+          icon="instagram"
+        />
+        <Social link="https://www.twitch.tv/tylerdotdev_/" icon="twitch" />
+        <Social link="https://www.github.com/tylerdotdev/" icon="github" />
+      </Socials>
+      <Email>tylerdotdev@gmail.com</Email>
     </Header>
   </Layout>
 )
