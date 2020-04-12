@@ -65,7 +65,7 @@ const IndexPage = () => (
           link="https://www.instagram.com/tylerdotdev/"
           icon="instagram"
         />
-        <Social link="https://www.twitch.tv/tylerdotdev_/" icon="twitch" />
+        <Social link="https://www.twitch.tv/tylerdotdev/" icon="twitch" />
         <Social link="https://www.github.com/tylerdotdev/" icon="github" />
       </Socials>
       <Email>tylerdotdev@gmail.com</Email>
