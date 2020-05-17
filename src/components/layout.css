@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
 html {
   font-family: sans-serif;
@@ -7,9 +8,9 @@ html {
 }
 body {
   margin: 0;
+  background: #151720;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1e1e1e;
 }
 article,
 aside,

@@ -1,14 +1,14 @@
 export default {
   particles: {
     number: {
-      value: 80,
+      value: 35,
       density: {
         enable: true,
         value_area: 500,
       },
     },
     color: {
-      value: "#00ffe1",
+      value: "#0ABDC6",
     },
     shape: {
       type: "circle",
@@ -49,7 +49,7 @@ export default {
       enable: true,
       distance: 150,
       color: "#00b8ff",
-      opacity: 0.4,
+      opacity: 0.2,
       width: 1,
     },
     move: {
@@ -75,7 +75,7 @@ export default {
         mode: "repulse",
       },
       onclick: {
-        enable: true,
+        enable: false,
         mode: "push",
       },
       resize: true,
