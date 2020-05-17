@@ -7,10 +7,11 @@ import Message from "./Message"
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 300px;
 `
 
 const Header = styled.h2`

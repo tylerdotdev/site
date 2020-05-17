@@ -30,10 +30,10 @@ const custom = {
 
 const Container = styled.div`
   height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 300px;
 `
 
 const Header = styled.h2`
@@ -121,7 +121,7 @@ const Services = () => {
       default:
         break
     }
-    console.log(refs)
+
     refs[service.type].current.scrollIntoView({
       behavior: "smooth",
       block: "start",

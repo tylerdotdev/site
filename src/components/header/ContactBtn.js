@@ -3,10 +3,8 @@ import styled from "styled-components"
 
 const Container = styled.div`
   cursor: pointer;
-  position: absolute;
   width: 220px;
   height: 50px;
-  top: 55%;
   border: 1px solid #2c2f3c;
   box-sizing: border-box;
   border-radius: 3px;

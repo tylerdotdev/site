@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
 
+html::-webkit-scrollbar {
+  display: none;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;

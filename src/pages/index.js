@@ -1,4 +1,5 @@
 import React from "react"
+import ReactPageScroller from "react-page-scroller"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -15,15 +16,23 @@ const Container = styled.div`
   align-items: center;
 `
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="tylerDOTdev" />
-    <Container>
-      <Header />
-      <Services />
-      <Contact />
-    </Container>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="tylerDOTdev" />
+      <>
+        <ReactPageScroller
+          animationTimer={600}
+          containerWidth="100vw"
+          containerHeight="100vh"
+        >
+          <Header />
+          <Services />
+          <Contact />
+        </ReactPageScroller>
+      </>
+    </Layout>
+  )
+}
 
 export default IndexPage
