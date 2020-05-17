@@ -12,6 +12,14 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 0 300px;
+
+  @media (max-width: 1780px) {
+    padding: 0 200px;
+  }
+
+  @media (max-width: 1550px) {
+    padding: 0 100px;
+  }
 `
 
 const Header = styled.h2`
