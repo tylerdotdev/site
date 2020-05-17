@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import ReactPageScroller from "react-page-scroller"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -17,6 +17,12 @@ const Container = styled.div`
 `
 
 const IndexPage = () => {
+  const [blockScroll, setBlockScroll] = useState(false)
+
+  useEffect(() => {
+    console.log(blockScroll)
+  }, [blockScroll])
+
   return (
     <Layout>
       <SEO title="tylerDOTdev" />
@@ -25,9 +31,11 @@ const IndexPage = () => {
           animationTimer={600}
           containerWidth="100vw"
           containerHeight="100vh"
+          blockScrollUp={blockScroll}
+          blockScrollDown={blockScroll}
         >
           <Header />
-          <Services />
+          <Services setBlockScroll={setBlockScroll} />
           <Contact />
         </ReactPageScroller>
       </>

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import Service from "./Service"
 import ProjectList from "./ProjectList"
@@ -64,7 +64,7 @@ const Row = styled.div`
   align-items: flex-start;
 `
 
-const Services = () => {
+const Services = ({ setBlockScroll }) => {
   const [services, setServices] = useState({ twitch, web, custom })
   const [refs, setRefs] = useState(null)
 
@@ -124,7 +124,7 @@ const Services = () => {
 
     refs[service.type].current.scrollIntoView({
       behavior: "smooth",
-      block: "start",
+      block: "end",
     })
   }
 
@@ -138,7 +138,7 @@ const Services = () => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList setRefs={setRefs} />
+        <ProjectList setRefs={setRefs} setBlockScroll={setBlockScroll} />
       </Row>
     </Container>
   )

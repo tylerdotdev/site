@@ -56,7 +56,7 @@ const projects = [
   },
 ]
 
-const ProjectList = ({ setRefs }) => {
+const ProjectList = ({ setRefs, setBlockScroll }) => {
   const refs = projects.reduce((acc, value) => {
     acc[value.type] = React.createRef()
     return acc
@@ -66,8 +66,21 @@ const ProjectList = ({ setRefs }) => {
     setRefs(refs)
   }, [setRefs])
 
+  const mouseEnter = e => {
+    e.preventDefault()
+    setBlockScroll(true)
+  }
+
+  const mouseLeave = e => {
+    e.preventDefault()
+    setBlockScroll(false)
+  }
+
   return (
-    <Container>
+    <Container
+      onMouseEnter={e => mouseEnter(e)}
+      onMouseLeave={e => mouseLeave(e)}
+    >
       {projects.map((project, i) => {
         return <Project key={i} ref={refs[project.type]} project={project} />
       })}
