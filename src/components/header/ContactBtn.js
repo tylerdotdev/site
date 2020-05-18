@@ -39,8 +39,8 @@ const BtnText = styled.span`
 
 const ContactBtn = ({ handleClick }) => {
   return (
-    <Container>
-      <BtnText onClick={handleClick}>CONTACT ME</BtnText>
+    <Container onClick={handleClick}>
+      <BtnText>CONTACT ME</BtnText>
     </Container>
   )
 }
