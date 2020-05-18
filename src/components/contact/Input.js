@@ -53,17 +53,30 @@ const Line = styled.div`
   background: rgba(255, 255, 255, 0.6);
 `
 
-const Input = ({ label, name }) => {
+const Input = ({ label, name, field, fields, setFields }) => {
+  const handleChange = e => {
+    e.preventDefault()
+
+    const newFields = {
+      ...fields,
+    }
+
+    newFields[name] = e.target.value
+
+    setFields(newFields)
+  }
+
   return (
     <>
       <Container>
         <Label>{label}</Label>
         <InputField
           name={name}
-          for="contact"
           id={label}
           type="text"
+          value={field}
           placeholder={`Your ${label}`}
+          onChange={handleChange}
         />
         <Line />
       </Container>

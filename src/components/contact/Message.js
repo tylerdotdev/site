@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import SubmitBtn from "./SubmitBtn"
 
 const Container = styled.div`
   display: flex;
@@ -48,12 +47,25 @@ const Text = styled.textarea`
   }
 `
 
-const Message = () => {
+const Message = ({ fields, field, setFields }) => {
+  const handleChange = e => {
+    e.preventDefault()
+
+    setFields({
+      ...fields,
+      message: e.target.value,
+    })
+  }
+
   return (
     <Container>
       <Label>MESSAGE</Label>
-      <Text name="message" for="contact" placeholder="Your Message" />
-      <SubmitBtn />
+      <Text
+        name="message"
+        value={field}
+        placeholder="Your Message"
+        onChange={handleChange}
+      />
     </Container>
   )
 }

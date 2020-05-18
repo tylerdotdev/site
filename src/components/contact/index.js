@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Social from "../header/social"
 import Input from "./Input"
 import ServiceSelection from "./ServiceSelection"
 import Message from "./Message"
+import SubmitBtn from "./SubmitBtn"
 
 const Container = styled.section`
   height: 100vh;
@@ -113,20 +114,36 @@ function encode(data) {
 }
 
 const Contact = () => {
+  const [fields, setFields] = useState({
+    name: "",
+    email: "",
+    services: "",
+    message: "",
+  })
+
   const handleSubmit = e => {
     e.preventDefault()
+    alert(
+      `${fields.name}, ${fields.email},${fields.services},${fields.message},`
+    )
+    const form = e.target.current
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...fields,
+      }),
+    })
+      .then(() => alert("Message sent!"))
+      .catch(error => alert(error))
 
-    // const form = e.target
-    // fetch("/", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    //   body: encode({
-    //     "form-name": form.getAttribute("name"),
-    //     ...this.state,
-    //   }),
-    // })
-    //   .then(() => alert("Message sent!"))
-    //   .catch(error => alert(error))
+    setFields({
+      name: "",
+      email: "",
+      services: "",
+      message: "",
+    })
   }
 
   return (
@@ -164,7 +181,6 @@ const Contact = () => {
           <form
             method="POST"
             name="contact"
-            action="/"
             data-netlify-honeypot="bot-field"
             data-netlify="true"
           >
@@ -175,10 +191,27 @@ const Contact = () => {
               value="contact"
               onSubmit={handleSubmit}
             />
-            <Input name="name" label="Name" />
-            <Input name="email" label="Email" />
-            <ServiceSelection />
-            <Message />
+            <Input
+              name="name"
+              label="Name"
+              field={fields.name}
+              fields={fields}
+              setFields={setFields}
+            />
+            <Input
+              name="email"
+              label="Email"
+              field={fields.email}
+              fields={fields}
+              setFields={setFields}
+            />
+            <ServiceSelection field={fields.services} setFields={setFields} />
+            <Message
+              fields={fields}
+              field={fields.message}
+              setFields={setFields}
+            />
+            <SubmitBtn />
           </form>
         </Form>
       </Wrapper>
