@@ -146,23 +146,23 @@ const Services = () => {
   }
 
   const config = {
-    duration: 300,
+    duration: 500,
   }
 
   const twitchAnim = useSpring({
     config,
     opacity: services.twitch.active ? 1 : 0,
-    transform: services.twitch.active ? "scaleY(1)" : "scaleY(0)",
+    // transform: services.twitch.active ? "scaleY(1)" : "scaleY(0)",
   })
   const webAnim = useSpring({
     config,
     opacity: services.web.active ? 1 : 0,
-    transform: services.web.active ? "scaleY(1)" : "scaleY(0)",
+    // transform: services.web.active ? "scaleY(1)" : "scaleY(0)",
   })
   const customAnim = useSpring({
     config,
     opacity: services.custom.active ? 1 : 0,
-    transform: services.custom.active ? "scaleY(1)" : "scaleY(0)",
+    // transform: services.custom.active ? "scaleY(1)" : "scaleY(0)",
   })
 
   return (
