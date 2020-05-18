@@ -107,6 +107,21 @@ const Annie = styled.a`
 `
 
 const Contact = () => {
+  const handleSubmit = e => {
+    e.preventDefault()
+    const form = e.target
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({
+        "form-name": form.getAttribute("name"),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute("action")))
+      .catch(error => alert(error))
+  }
+
   return (
     <Container id="contact" name="contact">
       <Header>GET IN CONTACT</Header>
@@ -144,7 +159,12 @@ const Contact = () => {
           data-netlify="true"
           data-netlify-honeypot="bot-field"
         >
-          <input type="hidden" name="form-name" value="contact" />
+          <input
+            type="hidden"
+            name="form-name"
+            value="contact"
+            onSubmit={handleSubmit}
+          />
           <Input label="Name" />
           <Input label="Email" />
           <ServiceSelection />
