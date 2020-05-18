@@ -3,13 +3,15 @@ import styled from "styled-components"
 import Social from "./social"
 import ContactBtn from "./ContactBtn"
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 `
 
 const Info = styled.div`

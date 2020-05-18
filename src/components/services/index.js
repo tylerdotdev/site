@@ -28,13 +28,15 @@ const custom = {
   type: "custom",
 }
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 300px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   @media (max-width: 1780px) {
     padding: 0 200px;
@@ -75,7 +77,6 @@ const Row = styled.div`
 
 const Services = () => {
   const [services, setServices] = useState({ twitch, web, custom })
-  const [refs, setRefs] = useState(null)
 
   const updateServices = service => {
     switch (service.number) {
@@ -130,11 +131,6 @@ const Services = () => {
       default:
         break
     }
-
-    refs[service.type].current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
   }
 
   return (
@@ -147,7 +143,7 @@ const Services = () => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList setRefs={setRefs} />
+        <ProjectList />
       </Row>
     </Container>
   )

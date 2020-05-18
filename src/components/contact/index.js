@@ -5,13 +5,15 @@ import Input from "./Input"
 import ServiceSelection from "./ServiceSelection"
 import Message from "./Message"
 
-const Container = styled.div`
+const Container = styled.section`
   height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 300px;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
 
   @media (max-width: 1780px) {
     padding: 0 200px;

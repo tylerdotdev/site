@@ -9,14 +9,14 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  overflow: hidden;
+  overflow: scroll;
+  scroll-snap-type: y proximity;
 }
 body {
   margin: 0;
   background: #151720;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
 }
 article,
 aside,

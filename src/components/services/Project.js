@@ -64,18 +64,15 @@ function useCombinedRefs(...refs) {
   return targetRef
 }
 
-const Project = React.forwardRef(({ project }, ref) => {
-  const innerRef = React.useRef(null)
-  const combinedRef = useCombinedRefs(ref, innerRef)
-
+const Project = ({ project }) => {
   return (
-    <div name={project.type} ref={combinedRef}>
+    <div name={project.type}>
       <Container id={project.type}>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
       </Container>
     </div>
   )
-})
+}
 
 export default Project

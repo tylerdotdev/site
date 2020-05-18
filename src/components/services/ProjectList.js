@@ -57,19 +57,10 @@ const projects = [
 ]
 
 const ProjectList = ({ setRefs }) => {
-  const refs = projects.reduce((acc, value) => {
-    acc[value.type] = React.createRef()
-    return acc
-  }, {})
-
-  useEffect(() => {
-    setRefs(refs)
-  }, [setRefs])
-
   return (
     <Container id="project-list">
       {projects.map((project, i) => {
-        return <Project key={i} ref={refs[project.type]} project={project} />
+        return <Project key={i} project={project} />
       })}
     </Container>
   )
