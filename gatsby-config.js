@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `tylerDOTdev`,
-    description: `Tyler is a software developer based in the LA area. He works with
-    Twitch streamers to create engaging integrations, bots, websites, and more.`,
+    description: `Tyler is a software developer based in Southern California. He works with
+    content creators to create engaging integrations, bots, websites, and more.`,
     author: `@tylerdotdev`,
   },
   plugins: [
