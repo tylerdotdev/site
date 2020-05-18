@@ -1,5 +1,6 @@
 import React from "react"
 import { scroller } from "react-scroll"
+import ReactPageScroller from "react-page-scroller"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -12,6 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `
 
 const IndexPage = () => {
@@ -27,9 +29,11 @@ const IndexPage = () => {
     <Layout>
       <SEO title="tylerDOTdev" />
       <Container>
-        <Header handleClick={handleClick} />
-        <Services />
-        <Contact name="contact" />
+        <ReactPageScroller animationTimer={700}>
+          <Header handleClick={handleClick} />
+          <Services />
+          <Contact name="contact" />
+        </ReactPageScroller>
       </Container>
     </Layout>
   )
