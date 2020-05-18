@@ -93,7 +93,7 @@ const Socials = styled.div`
   align-items: center;
 `
 
-const Form = styled.form`
+const Form = styled.div`
   width: 50%;
   margin-top: 50px;
   display: flex;
@@ -115,6 +115,18 @@ function encode(data) {
 const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault()
+
+    // const form = e.target
+    // fetch("/", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //   body: encode({
+    //     "form-name": form.getAttribute("name"),
+    //     ...this.state,
+    //   }),
+    // })
+    //   .then(() => alert("Message sent!"))
+    //   .catch(error => alert(error))
   }
 
   return (
@@ -148,23 +160,25 @@ const Contact = () => {
           </Info>
         </InfoContainer>
 
-        <Form
-          method="POST"
-          name="contact"
-          data-netlify-honeypot="bot-field"
-          data-netlify={true}
-        >
-          <input type="hidden" name="bot-field" />
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact"
-            onSubmit={handleSubmit}
-          />
-          <Input name="name" label="Name" />
-          <Input name="email" label="Email" />
-          <ServiceSelection />
-          <Message />
+        <Form>
+          <form
+            method="POST"
+            name="contact"
+            data-netlify-honeypot="bot-field"
+            data-netlify={true}
+          >
+            <input type="hidden" name="bot-field" />
+            <input
+              type="hidden"
+              name="form-name"
+              value="contact"
+              onSubmit={handleSubmit}
+            />
+            <Input name="name" label="Name" />
+            <Input name="email" label="Email" />
+            <ServiceSelection />
+            <Message />
+          </form>
         </Form>
       </Wrapper>
     </Container>
