@@ -1,5 +1,6 @@
 import React from "react"
 import { useSpring, animated } from "react-spring"
+import { Link } from "react-scroll"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -69,10 +70,20 @@ const Service = ({ service, updateServices }) => {
   })
 
   return (
-    <Container onClick={() => updateServices(service)}>
+    <Container>
       <Number active={service.active}>{service.number}</Number>
       <div>
-        <Title active={service.active}>{service.title}</Title>
+        <Title active={service.active}>
+          <Link
+            onClick={() => updateServices(service)}
+            to={service.type}
+            smooth={true}
+            duration={500}
+            containerId="project-list"
+          >
+            {service.title}
+          </Link>
+        </Title>
         <animated.div style={contentProps}>
           <Description active={service.active}>
             {service.description}

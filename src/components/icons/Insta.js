@@ -6,6 +6,7 @@ const SVG = styled.svg`
 
   :hover {
     fill: #0abdc6;
+    transform: scale(1.2);
   }
 `
 

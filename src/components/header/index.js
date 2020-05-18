@@ -30,7 +30,7 @@ const Title = styled.span`
 `
 
 const Socials = styled.div`
-  width: 190px;
+  width: 200px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -53,12 +53,12 @@ const Email = styled.span`
   margin-bottom: 50px;
 `
 
-const Header = () => (
+const Header = ({ handleClick }) => (
   <Container>
     <Info>
       <Title>tylerDOTdev</Title>
       <Email>tylerdotdev@gmail.com</Email>
-      <ContactBtn>CONTACT</ContactBtn>
+      <ContactBtn handleClick={handleClick}>CONTACT</ContactBtn>
 
       <Socials>
         <Social link="https://www.twitter.com/tylerdotdev/" icon="twitter" />

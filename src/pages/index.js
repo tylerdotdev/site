@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react"
-import ReactPageScroller from "react-page-scroller"
+import React from "react"
+import { scroller } from "react-scroll"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,8 +8,6 @@ import Services from "../components/services"
 import Contact from "../components/contact"
 
 const Container = styled.div`
-  width: 100%;
-  padding: 0 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,28 +15,22 @@ const Container = styled.div`
 `
 
 const IndexPage = () => {
-  const [blockScroll, setBlockScroll] = useState(false)
-
-  useEffect(() => {
-    console.log(blockScroll)
-  }, [blockScroll])
+  const handleClick = () => {
+    scroller.scrollTo("contact", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    })
+  }
 
   return (
     <Layout>
       <SEO title="tylerDOTdev" />
-      <>
-        <ReactPageScroller
-          animationTimer={600}
-          containerWidth="100vw"
-          containerHeight="100vh"
-          blockScrollUp={blockScroll}
-          blockScrollDown={blockScroll}
-        >
-          <Header />
-          <Services setBlockScroll={setBlockScroll} />
-          <Contact />
-        </ReactPageScroller>
-      </>
+      <Container>
+        <Header handleClick={handleClick} />
+        <Services />
+        <Contact name="contact" />
+      </Container>
     </Layout>
   )
 }

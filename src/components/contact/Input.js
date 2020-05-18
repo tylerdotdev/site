@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -54,8 +54,6 @@ const Line = styled.div`
 `
 
 const Input = ({ label }) => {
-  const [text, setText] = useState("")
-
   return (
     <>
       <Container>

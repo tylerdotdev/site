@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
 import Service from "./Service"
 import ProjectList from "./ProjectList"
@@ -30,6 +30,7 @@ const custom = {
 
 const Container = styled.div`
   height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +54,6 @@ const Header = styled.h2`
   font-weight: normal;
   font-size: 18px;
   line-height: 22px;
-  /* identical to box height */
 
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -66,13 +66,14 @@ const Header = styled.h2`
 const ServiceList = styled.div``
 
 const Row = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 `
 
-const Services = ({ setBlockScroll }) => {
+const Services = () => {
   const [services, setServices] = useState({ twitch, web, custom })
   const [refs, setRefs] = useState(null)
 
@@ -132,7 +133,7 @@ const Services = ({ setBlockScroll }) => {
 
     refs[service.type].current.scrollIntoView({
       behavior: "smooth",
-      block: "end",
+      block: "start",
     })
   }
 
@@ -146,7 +147,7 @@ const Services = ({ setBlockScroll }) => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList setRefs={setRefs} setBlockScroll={setBlockScroll} />
+        <ProjectList setRefs={setRefs} />
       </Row>
     </Container>
   )

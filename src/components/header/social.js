@@ -24,6 +24,8 @@ const getIcon = icon => {
       return <Twitch fill="#FFF" />
     case "github":
       return <GitHub fill="#FFF" />
+    default:
+      break
   }
 }
 

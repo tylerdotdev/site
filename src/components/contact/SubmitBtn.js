@@ -14,6 +14,17 @@ const Container = styled.div`
   align-items: center;
   box-shadow: 0px 0px 10px rgba(44, 47, 60, 0.4),
     inset 0 0 10px rgba(44, 47, 60, 0.4);
+
+  color: rgba(255, 255, 255, 0.73);
+  text-shadow: 1px 0 10px rgba(255, 255, 255, 0.2);
+
+  :hover {
+    color: #0abdc6;
+    text-shadow: 1px 0 10px rgba(10, 189, 198, 0.2);
+    border: 1px solid #0abdc6;
+    box-shadow: 0px 0px 10px rgba(10, 189, 198, 0.4),
+      inset 0 0 10px rgba(10, 189, 198, 0.4);
+  }
 `
 
 const BtnText = styled.span`
@@ -25,9 +36,6 @@ const BtnText = styled.span`
 
   text-align: center;
   letter-spacing: 0.25em;
-
-  color: rgba(255, 255, 255, 0.73);
-  text-shadow: 1px 0 10px rgba(255, 255, 255, 0.2);
 `
 
 const SubmitBtn = () => {

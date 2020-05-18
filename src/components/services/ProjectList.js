@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  overflow-y: scroll;
+  overflow-y: auto;
   -ms-overflow-style: none;
 
   ::-webkit-scrollbar {
@@ -56,7 +56,7 @@ const projects = [
   },
 ]
 
-const ProjectList = ({ setRefs, setBlockScroll }) => {
+const ProjectList = ({ setRefs }) => {
   const refs = projects.reduce((acc, value) => {
     acc[value.type] = React.createRef()
     return acc
@@ -66,21 +66,8 @@ const ProjectList = ({ setRefs, setBlockScroll }) => {
     setRefs(refs)
   }, [setRefs])
 
-  const mouseEnter = e => {
-    e.preventDefault()
-    setBlockScroll(true)
-  }
-
-  const mouseLeave = e => {
-    e.preventDefault()
-    setBlockScroll(false)
-  }
-
   return (
-    <Container
-      onMouseEnter={e => mouseEnter(e)}
-      onMouseLeave={e => mouseLeave(e)}
-    >
+    <Container id="project-list">
       {projects.map((project, i) => {
         return <Project key={i} ref={refs[project.type]} project={project} />
       })}

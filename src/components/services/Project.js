@@ -69,7 +69,7 @@ const Project = React.forwardRef(({ project }, ref) => {
   const combinedRef = useCombinedRefs(ref, innerRef)
 
   return (
-    <div ref={combinedRef}>
+    <div name={project.type} ref={combinedRef}>
       <Container id={project.type}>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
