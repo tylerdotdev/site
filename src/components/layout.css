@@ -1,15 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+html::-webkit-scrollbar {
+  display: none;
+}
 
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  overflow: hidden;
 }
 body {
   margin: 0;
+  background: #151720;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #1e1e1e;
 }
 article,
 aside,
