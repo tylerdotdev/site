@@ -1,7 +1,9 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
+import { animated as a, useSpring } from "react-spring"
 import Service from "./Service"
 import ProjectList from "./ProjectList"
+import projectData from "../../projects"
 
 const twitch = {
   title: "Twitch Platform Integration",
@@ -75,12 +77,20 @@ const Row = styled.div`
   align-items: flex-start;
 `
 
-const Services = ({ setBlockScroll }) => {
+const Projects = styled.div`
+  height: 465px;
+  margin-top: 10px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`
+
+const Services = () => {
   const [services, setServices] = useState({ twitch, web, custom })
-  const [updatingServices, setUpdatingServices] = useState(false)
 
   const updateServices = service => {
-    setUpdatingServices(true)
     switch (service.number) {
       case "01":
         setServices({
@@ -133,9 +143,27 @@ const Services = ({ setBlockScroll }) => {
       default:
         break
     }
-
-    setTimeout(() => setUpdatingServices(false), 1000)
   }
+
+  const config = {
+    duration: 300,
+  }
+
+  const twitchAnim = useSpring({
+    config,
+    opacity: services.twitch.active ? 1 : 0,
+    transform: services.twitch.active ? "scaleY(1)" : "scaleY(0)",
+  })
+  const webAnim = useSpring({
+    config,
+    opacity: services.web.active ? 1 : 0,
+    transform: services.web.active ? "scaleY(1)" : "scaleY(0)",
+  })
+  const customAnim = useSpring({
+    config,
+    opacity: services.custom.active ? 1 : 0,
+    transform: services.custom.active ? "scaleY(1)" : "scaleY(0)",
+  })
 
   return (
     <Container>
@@ -147,12 +175,29 @@ const Services = ({ setBlockScroll }) => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList
-          setBlockScroll={setBlockScroll}
-          setServices={setServices}
-          services={services}
-          updatingServices={updatingServices}
-        />
+        {services.twitch.active ? (
+          <a.div style={twitchAnim}>
+            <Projects>
+              <ProjectList projects={projectData.twitch} />
+            </Projects>
+          </a.div>
+        ) : null}
+
+        {services.web.active ? (
+          <a.div style={webAnim}>
+            <Projects>
+              <ProjectList projects={projectData.web} />
+            </Projects>
+          </a.div>
+        ) : null}
+
+        {services.custom.active ? (
+          <a.div style={customAnim}>
+            <Projects>
+              <ProjectList projects={projectData.custom} />
+            </Projects>
+          </a.div>
+        ) : null}
       </Row>
     </Container>
   )
