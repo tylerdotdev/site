@@ -24,9 +24,9 @@ const ServiceSelection = () => {
   return (
     <Container>
       <Section>SERVICE INQUIRIES</Section>
-      <Checkbox label="Twitch Platform Integration" />
-      <Checkbox label="Full-Stack Web Dev" />
-      <Checkbox label="Custom Software Solutions" />
+      <Checkbox name="twitch" label="Twitch Platform Integration" />
+      <Checkbox name="web" label="Full-Stack Web Dev" />
+      <Checkbox name="custom" label="Custom Software Solutions" />
     </Container>
   )
 }
