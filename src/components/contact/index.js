@@ -106,6 +106,12 @@ const Annie = styled.a`
   text-decoration: none;
 `
 
+function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
+
 const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault()
