@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.div`
+const Container = styled.button`
+  background: transparent;
   cursor: pointer;
   width: 150px;
   height: 50px;

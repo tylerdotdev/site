@@ -93,7 +93,7 @@ const Socials = styled.div`
   align-items: center;
 `
 
-const Form = styled.div`
+const Form = styled.form`
   width: 50%;
   margin-top: 50px;
   display: flex;
@@ -112,7 +112,7 @@ const Contact = () => {
       <Header>GET IN CONTACT</Header>
       <Wrapper>
         <InfoContainer>
-          <Info>Blurb about contact turnaround time etc.</Info>
+          <Info>Messages are typically responded to within 24 hours.</Info>
           <FollowMe>FOLLOW ME</FollowMe>
           <Socials>
             <Social
@@ -138,7 +138,7 @@ const Contact = () => {
           </Info>
         </InfoContainer>
 
-        <Form>
+        <Form name="contact" netlify>
           <Input label="Name" />
           <Input label="Email" />
           <ServiceSelection />

@@ -58,7 +58,12 @@ const Input = ({ label }) => {
     <>
       <Container>
         <Label>{label}</Label>
-        <InputField id={label} type="text" placeholder={`Your ${label}`} />
+        <InputField
+          for="contact"
+          id={label}
+          type="text"
+          placeholder={`Your ${label}`}
+        />
         <Line />
       </Container>
     </>

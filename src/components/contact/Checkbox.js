@@ -53,7 +53,7 @@ const Checkbox = ({ label }) => {
 
   return (
     <label>
-      <Input type="checkbox" />
+      <Input for="contact" type="checkbox" />
       <NewBox onClick={checkboxChange} checked={checked}>
         <Icon checked={checked} viewBox="0 0 24 24">
           <polyline points="20 6 9 17 4 12" />
