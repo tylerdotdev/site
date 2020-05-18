@@ -101,6 +101,11 @@ const Form = styled.div`
   justify-content: space-between;
 `
 
+const Annie = styled.a`
+  color: #0abdc6;
+  text-decoration: none;
+`
+
 const Contact = () => {
   return (
     <Container id="contact" name="contact">
@@ -121,6 +126,16 @@ const Contact = () => {
             <Social link="https://www.twitch.tv/tylerdotdev/" icon="twitch" />
             <Social link="https://www.github.com/tylerdotdev/" icon="github" />
           </Socials>
+
+          <Info>
+            Designed by{" "}
+            <Annie
+              href="https://www.behance.net/aannieyeund4c7"
+              target="_blank"
+            >
+              Annie Yeung
+            </Annie>
+          </Info>
         </InfoContainer>
 
         <Form>
