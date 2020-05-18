@@ -55,6 +55,28 @@ const Email = styled.span`
   margin-bottom: 50px;
 `
 
+const Arrow = styled.div`
+  position: absolute;
+  top: 70%;
+  color: #0abdc6;
+  opacity: 1;
+  animation: pulse 3s infinite;
+  padding: 15px;
+  cursor: pointer;
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+`
+
 const Header = ({ handleScroll }) => (
   <Container>
     <Info>
@@ -72,6 +94,10 @@ const Header = ({ handleScroll }) => (
         <Social link="https://www.github.com/tylerdotdev/" icon="github" />
       </Socials>
     </Info>
+
+    <Arrow onClick={() => handleScroll(1)}>
+      <i class="fas fa-angle-double-down fa-3x"></i>
+    </Arrow>
   </Container>
 )
 
