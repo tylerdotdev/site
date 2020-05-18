@@ -77,8 +77,10 @@ const Row = styled.div`
 
 const Services = ({ setBlockScroll }) => {
   const [services, setServices] = useState({ twitch, web, custom })
+  const [updatingServices, setUpdatingServices] = useState(false)
 
   const updateServices = service => {
+    setUpdatingServices(true)
     switch (service.number) {
       case "01":
         setServices({
@@ -131,6 +133,8 @@ const Services = ({ setBlockScroll }) => {
       default:
         break
     }
+
+    setTimeout(() => setUpdatingServices(false), 1000)
   }
 
   return (
@@ -143,7 +147,12 @@ const Services = ({ setBlockScroll }) => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList setBlockScroll={setBlockScroll} />
+        <ProjectList
+          setBlockScroll={setBlockScroll}
+          setServices={setServices}
+          services={services}
+          updatingServices={updatingServices}
+        />
       </Row>
     </Container>
   )

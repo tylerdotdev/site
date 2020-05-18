@@ -46,15 +46,36 @@ const Description = styled.span`
   color: rgba(255, 255, 255, 0.87);
 `
 
-const Project = ({ project }) => {
+function useCombinedRefs(...refs) {
+  const targetRef = React.useRef()
+
+  React.useEffect(() => {
+    refs.forEach(ref => {
+      if (!ref) return
+
+      if (typeof ref === "function") {
+        ref(targetRef.current)
+      } else {
+        ref.current = targetRef.current
+      }
+    })
+  }, [refs])
+
+  return targetRef
+}
+
+const Project = React.forwardRef(({ project }, ref) => {
+  const innerRef = React.useRef(null)
+  const combinedRef = useCombinedRefs(ref, innerRef)
+
   return (
-    <div name={project.type}>
+    <div name={project.type} ref={combinedRef}>
       <Container id={project.type}>
         <Title>{project.title}</Title>
         <Description>{project.description}</Description>
       </Container>
     </div>
   )
-}
+})
 
 export default Project
