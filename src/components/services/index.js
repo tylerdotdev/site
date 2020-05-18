@@ -8,7 +8,7 @@ import projectData from "../../projects"
 const twitch = {
   title: "Twitch Platform Integration",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sapien sem. Etiam at purus molestie, interdum elit et, feugiat urna. Curabitur consequat semper lectus.",
+    "Elevate your stream with Twitch integrated extensions, bots, physical devices, and more.",
   number: "01",
   active: true,
   type: "twitch",
@@ -16,15 +16,14 @@ const twitch = {
 const web = {
   title: "Full-Stack Web Dev",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sapien sem. Etiam at purus molestie, interdum elit et, feugiat urna. Curabitur consequat semper lectus.",
+    "Whether you need a simple site or a full-blown web app, you're covered with over 5 years of experience building responsive, mobile friendly products.",
   number: "02",
   active: false,
   type: "web",
 }
 const custom = {
   title: "Custom Software Solutions",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sapien sem. Etiam at purus molestie, interdum elit et, feugiat urna. Curabitur consequat semper lectus.",
+  description: "Native desktop apps, IoT devices, and more.",
   number: "03",
   active: false,
   type: "custom",
@@ -37,8 +36,6 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: center;
   padding: 0 300px;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
 
   @media (max-width: 1780px) {
     padding: 0 200px;
@@ -146,7 +143,7 @@ const Services = () => {
   }
 
   const config = {
-    duration: 500,
+    duration: 400,
   }
 
   const twitchAnim = useSpring({

@@ -1,8 +1,10 @@
 import React from "react"
 import styled from "styled-components"
+import External from "../icons/External"
 
 const Container = styled.div`
-  max-width: 498px;
+  width: 498px;
+  min-height: 135px;
   padding: 20px;
   margin-top: 10px;
   background: #2c2f3c;
@@ -46,36 +48,24 @@ const Description = styled.span`
   color: rgba(255, 255, 255, 0.87);
 `
 
-function useCombinedRefs(...refs) {
-  const targetRef = React.useRef()
+const Head = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
 
-  React.useEffect(() => {
-    refs.forEach(ref => {
-      if (!ref) return
-
-      if (typeof ref === "function") {
-        ref(targetRef.current)
-      } else {
-        ref.current = targetRef.current
-      }
-    })
-  }, [refs])
-
-  return targetRef
-}
-
-const Project = React.forwardRef(({ project }, ref) => {
-  const innerRef = React.useRef(null)
-  const combinedRef = useCombinedRefs(ref, innerRef)
-
+const Project = ({ project }) => {
   return (
-    <div name={project.type} ref={combinedRef}>
-      <Container id={project.type}>
-        <Title>{project.title}</Title>
+    <Container id={project.type}>
+      <a style={{ textDecoration: "none" }} href={project.link} target="_blank">
+        <Head>
+          <Title>{project.title}</Title>
+          <External />
+        </Head>
         <Description>{project.description}</Description>
-      </Container>
-    </div>
+      </a>
+    </Container>
   )
-})
+}
 
 export default Project

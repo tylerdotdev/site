@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Social from "./social"
 import ContactBtn from "./ContactBtn"
+import Arrow from "../icons/Arrow"
 
 const Container = styled.section`
   height: 100vh;
@@ -55,24 +56,24 @@ const Email = styled.span`
   margin-bottom: 50px;
 `
 
-const Arrow = styled.div`
+const Down = styled.div`
   position: absolute;
-  top: 70%;
-  color: #0abdc6;
-  opacity: 1;
-  animation: pulse 3s infinite;
-  padding: 15px;
+  top: 73%;
+  width: 100px;
   cursor: pointer;
+  opacity: 0.9;
+
+  animation: pulse 3s infinite;
 
   @keyframes pulse {
     0% {
-      transform: scale(1);
+      transform: scale(0.8);
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(0.9);
     }
     100% {
-      transform: scale(1);
+      transform: scale(0.8);
     }
   }
 `
@@ -95,9 +96,9 @@ const Header = ({ handleScroll }) => (
       </Socials>
     </Info>
 
-    <Arrow onClick={() => handleScroll(1)}>
-      <i class="fas fa-angle-double-down fa-3x"></i>
-    </Arrow>
+    <Down onClick={() => handleScroll(1)}>
+      <Arrow />
+    </Down>
   </Container>
 )
 
