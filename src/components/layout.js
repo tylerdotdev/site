@@ -27,6 +27,22 @@ const Layout = ({ children }) => {
           params={config}
         />
         <main>{children}</main>
+        <form
+          method="POST"
+          name="contact"
+          action="/"
+          data-netlify-honeypot="bot-field"
+          data-netlify="true"
+          hidden
+        >
+          <input name="name" type="text" />
+          <input name="email" type="text" />
+          <input name="twitch" type="checkbox" />
+          <input name="web" type="checkbox" />
+          <input name="custom" type="checkbox" />
+          <textarea name="message" />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </>
   )
