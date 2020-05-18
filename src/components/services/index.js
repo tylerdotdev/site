@@ -4,7 +4,7 @@ import Service from "./Service"
 import ProjectList from "./ProjectList"
 
 const twitch = {
-  title: "Twitch Platform Integrations",
+  title: "Twitch Platform Integration",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a sapien sem. Etiam at purus molestie, interdum elit et, feugiat urna. Curabitur consequat semper lectus.",
   number: "01",
