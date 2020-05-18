@@ -138,7 +138,13 @@ const Contact = () => {
           </Info>
         </InfoContainer>
 
-        <Form name="contact" netlify>
+        <Form
+          method="POST"
+          name="contact"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input type="hidden" name="contact" value="contact" />
           <Input label="Name" />
           <Input label="Email" />
           <ServiceSelection />

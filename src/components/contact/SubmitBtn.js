@@ -41,7 +41,7 @@ const BtnText = styled.span`
 
 const SubmitBtn = () => {
   return (
-    <Container>
+    <Container type="submit">
       <BtnText>SUBMIT</BtnText>
     </Container>
   )
