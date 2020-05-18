@@ -52,7 +52,7 @@ const Message = () => {
   return (
     <Container>
       <Label>MESSAGE</Label>
-      <Text for="contact" placeholder="Your Message" />
+      <Text name="message" for="contact" placeholder="Your Message" />
       <SubmitBtn />
     </Container>
   )

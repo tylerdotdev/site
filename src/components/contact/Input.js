@@ -53,12 +53,13 @@ const Line = styled.div`
   background: rgba(255, 255, 255, 0.6);
 `
 
-const Input = ({ label }) => {
+const Input = ({ label, name }) => {
   return (
     <>
       <Container>
         <Label>{label}</Label>
         <InputField
+          name={name}
           for="contact"
           id={label}
           type="text"
