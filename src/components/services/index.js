@@ -75,7 +75,7 @@ const Row = styled.div`
   align-items: flex-start;
 `
 
-const Services = () => {
+const Services = ({ setBlockScroll }) => {
   const [services, setServices] = useState({ twitch, web, custom })
 
   const updateServices = service => {
@@ -143,7 +143,7 @@ const Services = () => {
           <Service updateServices={updateServices} service={services.web} />
           <Service updateServices={updateServices} service={services.custom} />
         </ServiceList>
-        <ProjectList />
+        <ProjectList setBlockScroll={setBlockScroll} />
       </Row>
     </Container>
   )

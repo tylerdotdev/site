@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-scroll"
 import styled from "styled-components"
 
 const Container = styled.div`
@@ -37,10 +38,12 @@ const BtnText = styled.span`
   letter-spacing: 0.25em;
 `
 
-const ContactBtn = ({ handleClick }) => {
+const ContactBtn = () => {
   return (
-    <Container onClick={handleClick}>
-      <BtnText>CONTACT ME</BtnText>
+    <Container>
+      <Link to="contact" smooth={true} duration={500} containerId="contact">
+        <BtnText>CONTACT ME</BtnText>
+      </Link>
     </Container>
   )
 }

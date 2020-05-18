@@ -1,5 +1,4 @@
-import React from "react"
-import { scroller } from "react-scroll"
+import React, { useState, useEffect } from "react"
 import ReactPageScroller from "react-page-scroller"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -17,22 +16,20 @@ const Container = styled.div`
 `
 
 const IndexPage = () => {
-  const handleClick = () => {
-    scroller.scrollTo("contact", {
-      duration: 800,
-      delay: 0,
-      smooth: "easeInOutQuart",
-    })
-  }
+  const [blockScroll, setBlockScroll] = useState(false)
 
   return (
     <Layout>
       <SEO title="tylerDOTdev" />
       <Container>
-        <ReactPageScroller animationTimer={700}>
-          <Header handleClick={handleClick} />
-          <Services />
-          <Contact name="contact" />
+        <ReactPageScroller
+          animationTimer={700}
+          blockScrollUp={blockScroll}
+          blockScrollDown={blockScroll}
+        >
+          <Header />
+          <Services setBlockScroll={setBlockScroll} />
+          <Contact />
         </ReactPageScroller>
       </Container>
     </Layout>

@@ -103,7 +103,7 @@ const Form = styled.div`
 
 const Contact = () => {
   return (
-    <Container name="contact">
+    <Container id="contact" name="contact">
       <Header>GET IN CONTACT</Header>
       <Wrapper>
         <InfoContainer>
