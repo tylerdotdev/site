@@ -38,10 +38,16 @@ const BtnText = styled.span`
   letter-spacing: 0.25em;
 `
 
-const ContactBtn = () => {
+const ContactBtn = ({ handleScroll }) => {
   return (
-    <Container>
-      <Link to="contact" smooth={true} duration={500} containerId="contact">
+    <Container onClick={() => handleScroll(2)}>
+      <Link
+        onClick={() => handleScroll(2)}
+        to="contact"
+        smooth={true}
+        duration={500}
+        containerId="contact"
+      >
         <BtnText>CONTACT ME</BtnText>
       </Link>
     </Container>

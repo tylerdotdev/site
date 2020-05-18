@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState } from "react"
 import ReactPageScroller from "react-page-scroller"
 import styled from "styled-components"
 import Layout from "../components/layout"
@@ -12,26 +12,27 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 `
 
 const IndexPage = () => {
-  const [blockScroll, setBlockScroll] = useState(false)
+  const [page, setPage] = useState(null)
+
+  const handleScroll = num => {
+    setPage(num)
+  }
 
   return (
     <Layout>
       <SEO title="tylerDOTdev" />
-      <Container>
-        <ReactPageScroller
-          animationTimer={700}
-          blockScrollUp={blockScroll}
-          blockScrollDown={blockScroll}
-        >
-          <Header />
-          <Services setBlockScroll={setBlockScroll} />
-          <Contact />
-        </ReactPageScroller>
-      </Container>
+      <ReactPageScroller
+        animationTimer={700}
+        pageOnChange={handleScroll}
+        customPageNumber={page}
+      >
+        <Header handleScroll={handleScroll} />
+        <Services />
+        <Contact />
+      </ReactPageScroller>
     </Layout>
   )
 }

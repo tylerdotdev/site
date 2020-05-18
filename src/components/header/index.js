@@ -55,12 +55,12 @@ const Email = styled.span`
   margin-bottom: 50px;
 `
 
-const Header = () => (
+const Header = ({ handleScroll }) => (
   <Container>
     <Info>
       <Title>tylerDOTdev</Title>
       <Email>tylerdotdev@gmail.com</Email>
-      <ContactBtn>CONTACT</ContactBtn>
+      <ContactBtn handleScroll={handleScroll}>CONTACT</ContactBtn>
 
       <Socials>
         <Social link="https://www.twitter.com/tylerdotdev/" icon="twitter" />
