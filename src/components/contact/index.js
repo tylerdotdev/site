@@ -167,7 +167,7 @@ const Contact = () => {
           </Socials>
 
           <Info>
-            Designed by{" "}
+            Design by{" "}
             <Annie
               href="https://www.behance.net/aannieyeund4c7"
               target="_blank"

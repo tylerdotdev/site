@@ -63,17 +63,17 @@ const Down = styled.div`
   cursor: pointer;
   opacity: 0.9;
 
-  animation: pulse 3s infinite;
+  animation: pulse 2.5s infinite;
 
   @keyframes pulse {
     0% {
-      transform: scale(0.8);
+      transform: translateY(0);
     }
     50% {
-      transform: scale(0.9);
+      transform: translateY(30px);
     }
     100% {
-      transform: scale(0.8);
+      transform: translateY(0);
     }
   }
 `
