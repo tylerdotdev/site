@@ -86,7 +86,7 @@ const Header = ({ handleScroll }) => (
       <ContactBtn handleScroll={handleScroll}>CONTACT</ContactBtn>
 
       <Socials>
-        <Social link="https://www.twitter.com/tyleranton/" icon="twitter" />
+        <Social link="https://www.twitter.com/tylerdotdev/" icon="twitter" />
         <Social
           link="https://www.instagram.com/tylerdotdev/"
           icon="instagram"
