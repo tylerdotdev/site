@@ -8,6 +8,10 @@ const SVG = styled.svg`
     fill: #0abdc6;
     transform: scale(1.2);
   }
+
+  @media (max-width: 500px) {
+    width: 20px;
+  }
 `
 
 const GitHub = () => {

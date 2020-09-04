@@ -45,12 +45,20 @@ const InputField = styled.input`
   ::placeholder {
     color: rgba(255, 255, 255, 0.37);
   }
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `
 
 const Line = styled.div`
   width: 540px;
   height: 1px;
   background: rgba(255, 255, 255, 0.6);
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `
 
 const Input = ({ label, name, field, fields, setFields }) => {

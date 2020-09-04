@@ -64,7 +64,11 @@ const Header = styled.h2`
   mix-blend-mode: normal;
 `
 
-const ServiceList = styled.div``
+const ServiceList = styled.div`
+  @media (max-width: 500px) {
+    display: none;
+  }
+`
 
 const Row = styled.div`
   width: 100%;

@@ -23,6 +23,11 @@ const Container = styled.section`
   @media (max-width: 1550px) {
     padding: 0 100px;
   }
+
+  @media (max-width: 500px) {
+    padding: 0 80px;
+    align-items: center;
+  }
 `
 
 const Header = styled.h2`
@@ -42,6 +47,10 @@ const Header = styled.h2`
   color: rgba(255, 255, 255, 0.38);
 
   mix-blend-mode: normal;
+
+  @media (max-width: 500px) {
+    margin-left: 0;
+  }
 `
 
 const Wrapper = styled.div`
@@ -54,6 +63,10 @@ const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `
 
 const Info = styled.h4`
@@ -100,6 +113,10 @@ const Form = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `
 
 const Annie = styled.a`

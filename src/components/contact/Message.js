@@ -45,6 +45,10 @@ const Text = styled.textarea`
   ::placeholder {
     color: rgba(255, 255, 255, 0.37);
   }
+
+  @media (max-width: 500px) {
+    width: 250px;
+  }
 `
 
 const Message = ({ fields, field, setFields }) => {

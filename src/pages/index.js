@@ -16,7 +16,8 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="tylerDOTdev" />
-      <ReactPageScroller
+      <Header />
+      {/* <ReactPageScroller
         animationTimer={700}
         pageOnChange={handleScroll}
         customPageNumber={page}
@@ -24,7 +25,7 @@ const IndexPage = () => {
         <Header handleScroll={handleScroll} />
         <Services />
         <Contact />
-      </ReactPageScroller>
+      </ReactPageScroller> */}
     </Layout>
   )
 }

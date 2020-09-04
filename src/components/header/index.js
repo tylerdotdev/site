@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import Social from "./social"
-import ContactBtn from "./ContactBtn"
-import Arrow from "../icons/Arrow"
 
 const Container = styled.section`
   height: 100vh;
@@ -11,12 +9,10 @@ const Container = styled.section`
   justify-content: center;
   align-items: center;
   align-content: center;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
 `
 
 const Info = styled.div`
-  height: 270px;
+  /* height: 270px; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -30,6 +26,14 @@ const Title = styled.span`
   font-size: 3.4em;
   letter-spacing: 0.1em;
   margin-bottom: 40px;
+
+  @media (max-width: 768px) {
+    font-size: 2.8em;
+  }
+
+  @media (max-width: 500px) {
+    font-size: 2em;
+  }
 `
 
 const Socials = styled.div`
@@ -53,37 +57,44 @@ const Email = styled.span`
 
   color: rgba(255, 255, 255, 0.87);
 
-  margin-bottom: 50px;
-`
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
 
-const Down = styled.div`
-  position: absolute;
-  top: 73%;
-  width: 100px;
-  cursor: pointer;
-  opacity: 0.9;
-
-  animation: pulse 2.5s infinite;
-
-  @keyframes pulse {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(30px);
-    }
-    100% {
-      transform: translateY(0);
-    }
+  @media (max-width: 500px) {
+    font-size: 12px;
+    margin-bottom: 35px;
   }
 `
 
-const Header = ({ handleScroll }) => (
+// const Down = styled.div`
+//   position: absolute;
+//   top: 73%;
+//   width: 100px;
+//   cursor: pointer;
+//   opacity: 0.9;
+
+//   animation: pulse 2.5s infinite;
+
+//   @keyframes pulse {
+//     0% {
+//       transform: translateY(0);
+//     }
+//     50% {
+//       transform: translateY(30px);
+//     }
+//     100% {
+//       transform: translateY(0);
+//     }
+//   }
+// `
+
+const Header = () => (
   <Container>
     <Info>
       <Title>tylerDOTdev</Title>
       <Email>tylerdotdev@gmail.com</Email>
-      <ContactBtn handleScroll={handleScroll}>CONTACT</ContactBtn>
+      {/* <ContactBtn handleScroll={handleScroll}>CONTACT</ContactBtn> */}
 
       <Socials>
         <Social link="https://www.twitter.com/tylerdotdev/" icon="twitter" />
@@ -95,10 +106,10 @@ const Header = ({ handleScroll }) => (
         <Social link="https://www.github.com/tylerdotdev/" icon="github" />
       </Socials>
     </Info>
-
+    {/* 
     <Down onClick={() => handleScroll(1)}>
       <Arrow />
-    </Down>
+    </Down> */}
   </Container>
 )
 

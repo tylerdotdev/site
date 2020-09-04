@@ -25,6 +25,10 @@ const Container = styled.div`
     box-shadow: 0px 0px 10px rgba(10, 189, 198, 0.4),
       inset 0 0 10px rgba(10, 189, 198, 0.4);
   }
+
+  @media (max-width: 500px) {
+    width: 180px;
+  }
 `
 
 const BtnText = styled.span`
@@ -36,6 +40,10 @@ const BtnText = styled.span`
 
   text-align: center;
   letter-spacing: 0.25em;
+
+  @media (max-width: 500px) {
+    font-size: 14px;
+  }
 `
 
 const ContactBtn = ({ handleScroll }) => {
